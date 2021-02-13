@@ -11,12 +11,20 @@ const mix = require('laravel-mix');
  |
  */
 
+process.argv.push('--https');
+
 mix.js('resources/js/app.js', 'public/js').vue()
     .postCss('resources/css/app.css', 'public/css', [
         require('postcss-import'),
         require('tailwindcss'),
         require('autoprefixer'),
     ])
+    .options({
+        hmrOptions: {
+          host: 'chat-demo.home',
+          port: 8080,
+        },
+      })
     .webpackConfig(require('./webpack.config'));
 
 if (mix.inProduction()) {
