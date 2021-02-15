@@ -1,11 +1,11 @@
 <template>
-    <div>
+    <div class="h-full">
         <jet-banner />
 
-        <div class="min-h-screen bg-gray-100">
-            <nav class="bg-white border-b border-gray-100">
+        <div class="bg-gray-100 flex flex-col flex-auto h-full">
+            <nav class="bg-white border-b border-gray-100 flex-none">
                 <!-- Primary Navigation Menu -->
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="px-4">
                     <div class="flex justify-between h-16">
                         <div class="flex">
                             <!-- Logo -->
@@ -222,7 +222,7 @@
             </header>
 
             <!-- Page Content -->
-            <main>
+            <main class="flex flex-col flex-auto">
                 <slot></slot>
             </main>
 

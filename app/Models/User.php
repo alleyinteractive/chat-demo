@@ -58,4 +58,29 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function messages()
+    {
+        return $this->hasMany(Message::class);
+    }
+
+    public function minimalInfo()
+    {
+        return [
+            'id' => $this->id,
+            'name' => $this->name,
+            'avatar_url' => $this->profile_photo_url,
+        ];
+    }
+
+    /**
+     * Get the default profile photo URL if no profile photo has been uploaded.
+     *
+     * @return string
+     */
+    protected function defaultProfilePhotoUrl()
+    {
+        $hash = md5($this->email);
+        return "https://gravatar.com/avatar/{$hash}?s=160&d=robohash";
+    }
 }
