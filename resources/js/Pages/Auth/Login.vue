@@ -38,6 +38,12 @@
                 </jet-button>
             </div>
         </form>
+
+        <div class="flex items-center mt-4 pt-4 border-t justify-center">
+            <a :href="route('google.login')">
+                <img src="/images/btn_google_signin_light_normal_web.png" alt="Sign in with Google" />
+            </a>
+        </div>
     </jet-authentication-card>
 </template>
 
